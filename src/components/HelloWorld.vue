@@ -1,14 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 
-// 来自第一个 script
 defineProps({
   msg: String,
 })
 const count = ref(0)
 
-// 来自第二个 script
-const radio = ref(3) // 确保 ref 只从 'vue' 导入一次
+const radio = ref(3)
 </script>
 
 <template>
