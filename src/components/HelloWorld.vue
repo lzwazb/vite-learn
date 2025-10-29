@@ -1,13 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
+// 来自第一个 script
 defineProps({
   msg: String,
 })
-
 const count = ref(0)
 
-const radio = ref(3)
+// 来自第二个 script
+const radio = ref(3) // 确保 ref 只从 'vue' 导入一次
 </script>
 
 <template>
@@ -37,19 +38,14 @@ const radio = ref(3)
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 
-
-  <el-radio-group v-model="radio">
-    <el-radio :value="3">Option A</el-radio>
-    <el-radio :value="6">Option B</el-radio>
-    <el-radio :value="9">Option C</el-radio>
+  <el-radio-group v-model="radio" style="margin-top: 20px;">
+    <el-radio :label="3">Option A</el-radio>
+    <el-radio :label="6">Option B</el-radio>
+    <el-radio :label="9">Option C</el-radio>
   </el-radio-group>
+  <p>你选择的是: {{ radio }}</p>
+
 </template>
-
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const radio = ref(3)
-</script>
 
 <style scoped>
 .read-the-docs {
