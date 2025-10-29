@@ -6,6 +6,8 @@ defineProps({
 })
 
 const count = ref(0)
+
+const radio = ref(3)
 </script>
 
 <template>
@@ -34,9 +36,8 @@ const count = ref(0)
     >.
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
-</template>
 
-<template>
+
   <el-radio-group v-model="radio">
     <el-radio :value="3">Option A</el-radio>
     <el-radio :value="6">Option B</el-radio>
